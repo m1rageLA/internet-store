@@ -10,19 +10,28 @@ function App() {
     <>
       <div>
         <header>
-          <h1>Sports Clothing Store</h1>
+          <h1>Sklep z odzieżą sportową</h1>
           <nav>
+            <h2>Kategorie</h2>
             {/* Kategorie, koszyk */}
+            <ul>
+              <div>Obuwie</div>
+              <div>Spodnie</div>
+              <div>Koszulki</div>
+            </ul>
+            <div>Koszyk</div>
           </nav>
         </header>
         <main>
           {/* Główna zawartość, produkty */}
+          <h2>Produkty</h2>
         </main>
         <aside>
           {/* Menu boczne */}
         </aside>
         <footer>
           {/* Stopka */}
+          <p>2025</p>
         </footer>
       </div>
     </>
