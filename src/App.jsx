@@ -11,7 +11,7 @@ function App() {
       <div>
         <header>
           <h1>Sklep z odzieżą sportową</h1>
-          <Counter />
+          <Counter startCount="64" />
           <nav>
             <h2>Kategorie</h2>
             {/* Kategorie, koszyk */}
