@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 
 function Counter(props) {
-    const [count, setCount] = useState(props.startCount);
-    const [typedCount, setTypedCount] = useState(props.startCount);
+    const { startCount } = props;
+    const [count, setCount] = useState(startCount);
+    const [typedCount, setTypedCount] = useState(startCount);
 
     function addCount() {
         setCount(count + 1);
