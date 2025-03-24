@@ -1,16 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+import Counter from './Counter.jsx';
 
 function App() {
-  const [count, setCount] = useState(1)
 
   return (
     <>
       <div>
         <header>
           <h1>Sklep z odzieżą sportową</h1>
+          <Counter />
           <nav>
             <h2>Kategorie</h2>
             {/* Kategorie, koszyk */}
@@ -38,4 +39,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
