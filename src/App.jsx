@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import React from "react";
+import Header from "./components/Header.jsx";
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
@@ -10,7 +12,10 @@ function App() {
   return (
     <>
       <div>
-        Hello world!
+        <Header />
+        <main>
+          {/* Tutaj będzie reszta strony XD */}
+        </main>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
