@@ -10,7 +10,7 @@ function SidePanel() {
     const updateRange = (e, data) => {
         setPriceRange(data);
     };
-    const MAX = 100;
+    const MAX = 200;
     const MIN = 0;
     const marks = [
         {

@@ -12,7 +12,7 @@ function App() {
       <div>
         <header>
           <h1>Sklep z odzieżą sportową</h1>
-          <SidePanel />
+          
           <nav>
             <h2>Kategorie</h2>
             {/* Kategorie, koszyk */}
@@ -30,6 +30,7 @@ function App() {
         </main>
         <aside>
           {/* Menu boczne */}
+          <SidePanel />
         </aside>
         <footer>
           {/* Stopka */}

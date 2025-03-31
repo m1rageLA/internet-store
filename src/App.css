@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+aside {
+  float: left;
+  width: 50%;
+  background-color: #303030;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+}
+
