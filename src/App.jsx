@@ -2,6 +2,7 @@ import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
+import SidePanel from './SidePanel.jsx';
 import Counter from './Counter.jsx';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
       <div>
         <header>
           <h1>Sklep z odzieżą sportową</h1>
-          <Counter startCount="64" />
+          <SidePanel />
           <nav>
             <h2>Kategorie</h2>
             {/* Kategorie, koszyk */}
