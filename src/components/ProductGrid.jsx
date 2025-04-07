@@ -1,33 +1,19 @@
 import React from 'react';
 import { Grid, Container } from '@mui/material';
-import ProductCard from './components/ProductCard';
+import ProductCard from './productCard';
 
-function App() {
-  const products = [
-    {
-      price: 99.99,
-      title: 'Słuchawki',
-      description: 'Bezprzewodowe i wygodne.',
-      category: 'Audio',
-      image: '',
-    },
-    {
-      price: 149.99,
-      title: 'Myszka gamingowa',
-      description: 'Szybka i precyzyjna.',
-      category: 'Akcesoria',
-      image: '',
-    },
-    {
-      price: 59.99,
-      title: 'Kubek termiczny',
-      description: 'Idealny do kawy na wynos.',
-      category: 'Dom',
-      image: '',
-    },
-  ];
-
-  return <ProductGrid products={products} />;
-}
+const ProductGrid = ({ products }) => {
+  return (
+    <Container sx={{ mt: 4, maxWidth: '1200px' }}>
+      <Grid container spacing={1}>  {}
+        {products.map((product, index) => (
+          <Grid item xs={12} sm={6} md={4} key={index}>
+            <ProductCard {...product} />
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
+  );
+};
 
 export default ProductGrid;
