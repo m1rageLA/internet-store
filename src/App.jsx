@@ -1,22 +1,33 @@
 import React from 'react';
-import { Box } from '@mui/material';
-import ProductCard from './components/ProductCard';
+import ProductGrid from './components/ProductGrid';
 import './App.css'
 
 function App() {
-  const product = {
-    price: 149.99,
-    title: 'Myszka bezprzewodowa',
-    description: 'Ergonomiczna i precyzyjna.',
-    category: 'Elektronika',
-    image: '', // залиш пустим для placeholder
-  };
+  const products = [
+    {
+      price: 99.99,
+      title: 'Słuchawki',
+      description: 'Bezprzewodowe i wygodne.',
+      category: 'Audio',
+      image: '',
+    },
+    {
+      price: 149.99,
+      title: 'Myszka gamingowa',
+      description: 'Szybka i precyzyjna.',
+      category: 'Akcesoria',
+      image: '',
+    },
+    {
+      price: 59.99,
+      title: 'Kubek termiczny',
+      description: 'Idealny do kawy na wynos.',
+      category: 'Dom',
+      image: '',
+    },
+  ];
 
-  return (
-    <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh">
-      <ProductCard {...product} />
-    </Box>
-  );
+  return <ProductGrid products={products} />;
 }
 
 export default App
