@@ -11,7 +11,7 @@ const ProductCard = ({ price, title, description, category, image }) => {
         alt={title}
       />
       <CardContent>
-        <Chip label={category} color="primary" size="small" sx={{ mb: 1 }} />
+        <Chip label={category} color="primary" size="small" sx={{ mb: 1}} />
         <Typography align="left" variant="h6" component="div" gutterBottom>
           {title}
         </Typography>
