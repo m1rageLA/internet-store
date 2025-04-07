@@ -3,7 +3,7 @@ import { Card, CardMedia, CardContent, Typography, Box, Chip } from '@mui/materi
 
 const ProductCard = ({ price, title, description, category, image }) => {
   return (
-    <Card sx={{ maxWidth: 300, m: 2 }}>
+    <Card sx={{ maxWidth: 300, m: 1 }}>
       <CardMedia
         component="img"
         height="180"
@@ -12,7 +12,7 @@ const ProductCard = ({ price, title, description, category, image }) => {
       />
       <CardContent>
         <Chip label={category} color="primary" size="small" sx={{ mb: 1 }} />
-        <Typography variant="h6" component="div" gutterBottom>
+        <Typography align="left" variant="h6" component="div" gutterBottom>
           {title}
         </Typography>
         <Typography align="left" variant="body2"  sx={{ mb: 1 }}>
