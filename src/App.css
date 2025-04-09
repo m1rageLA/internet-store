@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  min-width: 320px;
 }
 
 .logo {
@@ -39,4 +40,42 @@
 
 .read-the-docs {
   color: #888;
+}
+
+#frame {
+  background-color: rgb(30, 30, 30);
+  border-top: green 3px solid;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width:100%;
+  margin:10px;
+}
+
+#checkout_item_frame {
+  background-color: rgb(49, 49, 49);
+  border-top: green 3px solid;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  margin: 10px;
+  width:auto;
+}
+
+#checkout_item_frame #image {
+  width:100px;
+}
+
+#checkout_item_frame #price {
+  width: 50%;
+}
+
+#checkout_item_frame #amount {
+  width:auto;
+}
+
+.priceTag {
+  color:rgb(0, 180, 0);
 }

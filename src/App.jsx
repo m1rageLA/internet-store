@@ -1,16 +1,14 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Checkout from './Checkout.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [product_sum, product_sum_set] = useState(0)
 
   return (
-    <div>
+    <>
       <Checkout />
-    </div>
+    </>
   )
 }
 
