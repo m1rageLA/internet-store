@@ -4,7 +4,7 @@ import { Card, CardMedia, CardContent, Typography, Box, Chip } from '@mui/materi
 const CheckoutItem = ({ price, title, description, category, image }) => {
 
     return (
-        <Card sx={{ maxWidth: 300, m: 1 }}>
+        <Card sx={{ maxWidth: 600, m: 1 }}>
         <CardMedia
             component="img"
             height="180"
