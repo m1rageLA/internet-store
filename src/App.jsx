@@ -1,11 +1,12 @@
-
 import { useState } from 'react';
 import React from "react";
 import Header from "./components/Header.jsx";
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
+import SidePanel from './SidePanel.jsx';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Counter from './Counter.jsx';
 
     const products = [
     {
@@ -66,7 +67,10 @@ function App() {
   return (
     <Router>
       <div>
-        <Header />
+        <header>
+          <h1>Sklep z odzieżą sportową</h1>
+          //----------------
+           <Header />
         <nav className="navbar">
           <Link to="/">Strona Główna</Link>
           <Link to="/about">O nas</Link>
@@ -102,9 +106,31 @@ function App() {
           Click on the Vite and React logos to learn more
         </p>
         <Counter /> {/* Licznik */}
+          //----------------
+          <nav>
+            <h2>Kategorie</h2>
+            {/* Kategorie, koszyk */}
+            <ul>
+              <div>Obuwie</div>
+              <div>Spodnie</div>
+              <div>Koszulki</div>
+            </ul>
+            <div>Koszyk</div>
+          </nav>
+        </header>
+        <main>
+          {/* Główna zawartość, produkty */}
+          <h2>Produkty</h2>
+        </main>
+        <aside>
+          {/* Menu boczne */}
+          <SidePanel />
+        </aside>
+        <footer>
+          {/* Stopka */}
+          <p>2025</p>
+        </footer>
       </div>
-    </Router>
-  );
+    </>
+  )
 }
-
-export default App;

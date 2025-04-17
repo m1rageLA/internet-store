@@ -1,18 +1,33 @@
-import React, { useState } from "react";
 
-const Counter = () => {
-    const [count, setCount] = useState(0);
+import React, {useState} from "react";
+
+function Counter(props) {
+    const { startCount } = props;
+    const [count, setCount] = useState(startCount);
+    const [typedCount, setTypedCount] = useState(startCount);
+
+    function addCount() {
+        setCount(count + 1);
+        setTypedCount(count + 1);
+    }
+    function subtractCount() {
+        setCount(count - 1);
+        setTypedCount(count - 1);
+    }
+    function changeCount(val) {
+        setTypedCount(val);
+        setCount(val);
+    }
 
     return (
-        <div style={{ textAlign: "center", marginTop: "50px" }}>
-            <h2>Counter: {count}</h2>
-            <button onClick={() => setCount(count + 1)}>+</button>
-            <button onClick={() => setCount(count - 1)}>-</button>
-            </div>
+        <div>
+            <p>The number is currently {count}.</p>
+            <button onClick={addCount}>Add 1</button>
+            <button onClick={subtractCount}>Subtract 1</button>
+            <input value={typedCount} onChange={e => changeCount(e.target.value)} type="number"></input>
+        </div>
     );
-};
+}
 
 export default Counter;
 
-
-    

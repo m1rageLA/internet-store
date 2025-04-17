@@ -88,3 +88,12 @@ h1 {
   color: #000; /* Ustawiamy kolor tekstu na czarny */
 }
 
+aside {
+  float: left;
+  width: 50%;
+  background-color: #303030;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+}
+
