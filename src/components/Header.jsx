@@ -9,6 +9,7 @@ import InputBase from "@mui/material/InputBase";
 import Box from "@mui/material/Box";
 import { styled, alpha } from "@mui/material/styles";
 import logo from "../assets/wieczysta.png";
+import { Link } from "react-router-dom";
 
 
 const Search = styled("div")(({ theme }) => ({
@@ -68,9 +69,9 @@ const Header = () => {
 
         {/* Nawigacja */}
         <Box sx={{ display: "flex", gap: 2, ml: 2 }}>
-          <Typography variant="body1">Strona Główna</Typography>
-          <Typography variant="body1">Sklep</Typography>
-          <Typography variant="body1">Kontakt</Typography>
+          <Link to="/">Strona Główna</Link>
+          <Link to="/about">O nas</Link>
+          <Link to="/contact">Kontakt</Link>
         </Box>
 
         {/* Przycisk koszyka */}
