@@ -41,7 +41,11 @@ function SidePanel() {
             <span>Kategorie</span>
             <FormGroup>
                 {categories.map(category => (
-                    <FormControlLabel control={<Checkbox />} label={category} />
+                    <FormControlLabel
+                        key={category}
+                        control={<Checkbox />}
+                        label={category}
+                    />
                 ))}
             </FormGroup>
         </Container>

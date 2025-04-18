@@ -48,20 +48,9 @@ function NotFound() {
   return <h2>404 - Strona nie znaleziona</h2>;
 }
 
-function Counter() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div className="card">
-      <h2>Counter: {count}</h2>
-      <button onClick={() => setCount(count + 1)}>+</button>
-      <button onClick={() => setCount(count - 1)}>-</button>
-    </div>
-  );
-}
 
 
-function App() {
+export default function App() {
   const [count, setCount] = useState(0);
 
   return (
@@ -131,6 +120,6 @@ function App() {
           <p>2025</p>
         </footer>
       </div>
-    </>
-  )
+    </Router>
+  );
 }
