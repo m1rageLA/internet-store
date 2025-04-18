@@ -1,2 +1,15 @@
-const Home = () => <h2>Strona Główna</h2>;
-export default Home;
+import React from 'react';
+import ProductsSection from '../components/ProductsSection';
+import Counter from "../Counter"
+
+export default function Home() {
+  return (
+    <>
+      <div>
+        <ProductsSection />
+        <Counter />
+      </div>
+
+    </>
+  );
+}
