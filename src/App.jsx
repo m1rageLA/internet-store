@@ -7,7 +7,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Checkout from './Checkout.jsx';
 import NotFound from './pages/NotFound';
-import Login from './pages/Login.jsx';
+import Login from './pages/Login';
 
 export default function App() {
   return (
