@@ -1,12 +1,22 @@
 import React from 'react';
+import { Box, Typography } from '@mui/material';
 import LoginForm from '../components/LoginForm';
 
 function Login() {
   return (
-    <div>
-      <h1>Page</h1>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        mt: 4,
+      }}
+    >
+      <Typography variant="h4" gutterBottom>
+        Login Page
+      </Typography>
       <LoginForm />
-    </div>
+    </Box>
   );
 }
 
