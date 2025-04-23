@@ -83,16 +83,17 @@ const Header = () => {
 
 
         {/* Справа — корзина */}
-        <Box sx={{display: "flex", gap: 5}}>
+        <Box sx={{ display: "flex", gap: 5 }}>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase placeholder="Szukaj…" inputProps={{ "aria-label": "search" }} />
           </Search>
-          <IconButton color="inherit">
+          <IconButton color="inherit" component={Link} to="/checkout">
             <ShoppingCartIcon />
           </IconButton>
+
         </Box>
 
       </Toolbar>

@@ -1,34 +1,64 @@
-import React from 'react';
-import { Card, CardMedia, CardContent, Typography, Box, Chip } from '@mui/material';
+// src/components/ProductCard.jsx
+import React from "react";
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  Box,
+  Chip,
+  Button
+} from "@mui/material";
+import { useCart } from "../context/CartContext";
 
-const ProductCard = ({ price, title, description, category, image }) => {
+export default function ProductCard({ id, title, description, category, image, price }) {
+  const { addToCart } = useCart();
+
+  const handleAdd = () => {
+    addToCart({ id, title, description, category, image, price });
+    alert(`Dodano do koszyka: ${title}`);
+  };
+
   return (
-    <Card sx={{
-      width: '100%',         // растягивается на всю ширину колонки
-      height: '100%',        // можно добавить, если хочешь одинаковую высоту
-      display: 'flex',
-      flexDirection: 'column'
-    }}>
+    <Card sx={{ maxWidth: 345, m: 1, display: "flex", flexDirection: "column" }}>
       <CardMedia
         component="img"
         height="180"
         image={image || 'https://placehold.co/150x200'}
         alt={title}
       />
-      <CardContent>
-        <Chip label={category} color="primary" size="small" sx={{ mb: 1 }} />
-        <Typography align="left" variant="h6" component="div" gutterBottom>
+      <CardContent sx={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
+        {/* Чип с категорией, размер и отступы как прежде */}
+        <Chip 
+          label={category} 
+          color="primary" 
+          size="small" 
+          sx={{ mb: 1, alignSelf: 'flex-start' }} 
+        />
+
+        <Typography variant="h6" gutterBottom>
           {title}
         </Typography>
-        <Typography align="left" variant="body2" sx={{ mb: 1 }}>
+        <Typography variant="body2" sx={{ mb: 2, flexGrow: 1 }}>
           {description}
         </Typography>
-        <Typography align="left" variant="subtitle1" color="text.primary" fontWeight="bold">
-          {price} zł
+
+        {/* Цена */}
+        <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
+          {price.toFixed(2)} zł
         </Typography>
+
+        {/* Кнопка под ценой */}
+        <Box sx={{ mt: 1 }}>
+          <Button
+            fullWidth
+            variant="contained"
+            onClick={handleAdd}
+          >
+            Do koszyka
+          </Button>
+        </Box>
       </CardContent>
     </Card>
   );
-};
-
-export default ProductCard; 
+}
