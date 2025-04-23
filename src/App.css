@@ -1,3 +1,11 @@
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  min-width: 320px;
+
 /* App.css */
 html, body {
   height: 100%;
@@ -89,6 +97,43 @@ h1 {
   color: #000; /* Ustawiamy kolor tekstu na czarny */
 }
 
+#frame {
+  background-color: rgb(30, 30, 30);
+  border-top: green 3px solid;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width:100%;
+  margin:10px;
+}
+
+#checkout_item_frame {
+  background-color: rgb(49, 49, 49);
+  border-top: green 3px solid;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  margin: 10px;
+  width:auto;
+}
+
+#checkout_item_frame #image {
+  width:100px;
+}
+
+#checkout_item_frame #price {
+  width: 50%;
+}
+
+#checkout_item_frame #amount {
+  width:auto;
+}
+
+.priceTag {
+  color:rgb(0, 180, 0);
+}
 aside {
   float: left;
   width: 50%;
