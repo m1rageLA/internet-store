@@ -11,6 +11,8 @@ import {
 } from "@mui/material";
 import { useCart } from "../context/CartContext";
 
+//changed the name of the component
+
 export default function ProductCard({ id, title, description, category, image, price }) {
   const { addToCart } = useCart();
 
