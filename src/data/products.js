@@ -20,4 +20,11 @@ export const products = [
     category: 'Dom',
     image: '',
   },
+  {
+    price: 99.99,
+    title: 'Słuchawki',
+    description: 'Bezprzewodowe i wygodne.',
+    category: 'Audio',
+    image: '',
+  },
 ];

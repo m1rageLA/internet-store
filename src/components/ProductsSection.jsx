@@ -1,16 +1,21 @@
 import React from 'react';
+import { Grid, Typography, Container } from '@mui/material';
 import ProductCard from './ProductCard';
 import { products } from '../data/products';
 
 export default function ProductsSection() {
   return (
-    <section>
-      <h2 className="text-2xl font-bold mb-4">Produkty</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {products.map((p) => (
-          <ProductCard key={p.title} product={p} />
+    <Container maxWidth="lg" sx={{ mt: 4 }}>
+      <Typography color='#2e2e2e' variant="h4" fontWeight="bold" gutterBottom>
+        Produkty
+      </Typography>
+      <Grid container spacing={3}>
+        {products.map((product) => (
+          <Grid item xs={12} sm={6} md={4} key={product.title}>
+            <ProductCard {...product} />
+          </Grid>
         ))}
-      </div>
-    </section>
+      </Grid>
+    </Container>
   );
 }
