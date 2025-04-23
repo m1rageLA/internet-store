@@ -12,7 +12,7 @@ function Login() {
         mt: 4,
       }}
     >
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h4" gutterBottom color='primary'>
         Login Page
       </Typography>
       <LoginForm />
