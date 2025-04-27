@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Box, Container, Button, Paper, TableContainer, Table, TableBody, TableCell, TableRow } from '@mui/material';
+import { Box, Container, Button, Paper, TableContainer, Table, TableHead, TableBody, TableCell, TableRow } from '@mui/material';
 import CheckoutItem from "./CheckoutItem.jsx";
 
 const Checkout = ({ products }) => {
@@ -7,8 +7,21 @@ const Checkout = ({ products }) => {
 
     return (
         <Box sx={{ maxWidth: 800, mx: 'auto', p: 2 }}>
+            <Box sx={{ textAlign: 'left', mt: 2 }}>
+                <span className="priceTag"><h2>Koszyk</h2></span>
+            </Box>
             <TableContainer component={Paper}>
                 <Table>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Lp.</TableCell>
+                            <TableCell>Zdjęcie</TableCell>
+                            <TableCell>Nazwa produktu</TableCell>
+                            <TableCell>Cena za szt.</TableCell>
+                            <TableCell>Ilość</TableCell>
+                            <TableCell>Wartość</TableCell>
+                        </TableRow>
+                    </TableHead>
                     <TableBody>
                         {products.map((product, index) => (
                         <TableRow>
