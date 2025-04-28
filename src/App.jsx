@@ -1,34 +1,27 @@
-import { useState } from 'react'
-import './App.css'
-import Checkout from './Checkout.jsx'
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
+import './App.css';
+import Checkout from './Checkout.jsx';
 
-function App() {
-  const products = [
-    {
-      price: 99.99,
-      title: 'Słuchawki',
-      amount: 1,
-      image: '',
-    },
-    {
-      price: 149.99,
-      title: 'Myszka gamingowa',
-      amount: 1,
-      image: '',
-    },
-    {
-      price: 59.99,
-      title: 'Kubek termiczny',
-      amount: 2,
-      image: '',
-    },
-  ];
+export default function App() {
+  const [products, setProducts] = useState([]); // assuming products comes from state
 
   return (
-    
-      <Checkout products={products} />
-    
-  )
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/checkout" element={<Checkout products={products} />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Layout>
+    </Router>
+  );
 }
-
-export default App
