@@ -9,7 +9,8 @@ import {
   Chip,
   Button
 } from "@mui/material";
-import { useCart } from "../context/CartContext";
+import { useCart } from '../useCart';
+
 
 //changed the name of the component
 

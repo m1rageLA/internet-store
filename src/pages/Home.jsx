@@ -5,14 +5,17 @@ import SidePanel from '../components/SidePanel';
 
 export default function Home() {
   return (
-    <Box sx={{ display: 'flex', gap: 4, px: 4, pt: 4 }}>
-      <Box sx={{ width: 250, flexShrink: 0 }}>
-        <SidePanel />
-      </Box>
-
-      <Box sx={{ flexGrow: 1 }}>
-        <ProductsSection />
+    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4, px: 4, pt: 4 }}>
+      <h1>O nas</h1> {/* <<< добавляем сюда */}
+      <Box sx={{ display: 'flex', gap: 4 }}>
+        <Box sx={{ width: 250, flexShrink: 0 }}>
+          <SidePanel />
+        </Box>
+        <Box sx={{ flexGrow: 1 }}>
+          <ProductsSection />
+        </Box>
       </Box>
     </Box>
   );
 }
+
