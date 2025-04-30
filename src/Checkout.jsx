@@ -5,6 +5,7 @@ import {
   Button,
   Paper,
   Table,
+  TableHead,
   TableBody,
   TableCell,
   TableContainer,
@@ -19,8 +20,19 @@ export default function Checkout() {
 
   return (
     <Box sx={{ maxWidth: 800, mx: 'auto', p: 2 }}>
+      <Box sx={{ textAlign: 'left', mt: 2 }}>
+        <b>Koszyk</b>
+      </Box>
       <TableContainer component={Paper}>
         <Table>
+          <TableHead>
+            <TableCell>Lp.</TableCell>
+            <TableCell>Obrazek</TableCell>
+            <TableCell>Nazwa produktu</TableCell>
+            <TableCell>Cena za szt.</TableCell>
+            <TableCell>Ilość</TableCell>
+            <TableCell>Wartość</TableCell>
+          </TableHead>
           <TableBody>
             {products.map((product, i) => (
               <TableRow key={product.id}>
