@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Typography, Chip, Stack } from '@mui/material';
+import { Box, Typography } from '@mui/material';
+import { Categories } from './Categories';
 
 export default function SidePanel() {
   const categories = ['Obuwie', 'Spodnie', 'Koszulki', 'Akcesoria', 'Dom', 'Audio'];
@@ -24,17 +25,7 @@ export default function SidePanel() {
       <Typography variant="h6" fontWeight="bold" gutterBottom>
         Kategorie
       </Typography>
-      <Stack direction="row" spacing={1} flexWrap="wrap">
-        {categories.map(category => (
-          <Chip
-            key={category}
-            label={category}
-            clickable
-            // color={selectedCategories.includes(category) ? 'primary' : 'default'}
-            // onClick={() => toggleCategory(category)}
-          />
-        ))}
-      </Stack>
+      <Categories />
     </Box>
   );
 }
