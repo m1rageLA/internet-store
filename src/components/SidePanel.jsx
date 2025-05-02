@@ -1,7 +1,9 @@
 import React from 'react';
-import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
+import { Box, Typography, Chip, Stack } from '@mui/material';
 
 export default function SidePanel() {
+  const categories = ['Obuwie', 'Spodnie', 'Koszulki', 'Akcesoria', 'Dom', 'Audio'];
+  
   return (
     <Box
       component="aside"
@@ -22,13 +24,17 @@ export default function SidePanel() {
       <Typography variant="h6" fontWeight="bold" gutterBottom>
         Kategorie
       </Typography>
-      <List dense>
-        {['Obuwie', 'Spodnie', 'Koszulki'].map((text) => (
-          <ListItem disablePadding key={text}>
-            <ListItemText primary={text} />
-          </ListItem>
+      <Stack direction="row" spacing={1} flexWrap="wrap">
+        {categories.map(category => (
+          <Chip
+            key={category}
+            label={category}
+            clickable
+            // color={selectedCategories.includes(category) ? 'primary' : 'default'}
+            // onClick={() => toggleCategory(category)}
+          />
         ))}
-      </List>
+      </Stack>
     </Box>
   );
 }
