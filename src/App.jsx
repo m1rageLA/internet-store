@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
-import Checkout from './Checkout';
+import Checkout from './components/Checkout';
 
 export default function App() {
   return (
