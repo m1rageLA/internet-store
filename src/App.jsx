@@ -5,8 +5,8 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Checkout from './Checkout.jsx';
 import NotFound from './pages/NotFound';
+import Checkout from './Checkout';
 
 export default function App() {
   return (
