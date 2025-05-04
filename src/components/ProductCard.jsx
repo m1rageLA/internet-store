@@ -22,15 +22,14 @@ export default function ProductCard({ id, title, description, category, image, p
   };
 
   return (
-    <Card sx={{ width: 200, m: 1 }}>
+    <Card sx={{ width: 200, height: 400, display: 'flex', flexDirection: 'column', m: 1 }}>
       <CardMedia
         component="img"
         image={image || 'https://placehold.co/345x200'}
         alt={title}
-        sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        sx={{ height: 150, objectFit: 'cover' }}
       />
       <CardContent sx={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
-        {/* Чип с категорией, размер и отступы как прежде */}
         <Chip
           label={category}
           color="primary"
@@ -38,29 +37,24 @@ export default function ProductCard({ id, title, description, category, image, p
           sx={{ mb: 1, alignSelf: 'flex-start' }}
         />
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" gutterBottom noWrap>
           {title}
         </Typography>
-        <Typography variant="body2" sx={{ mb: 2, flexGrow: 1 }}>
+        <Typography variant="body2" sx={{ mb: 2, flexGrow: 1, overflow: 'hidden' }}>
           {description}
         </Typography>
 
-        {/* Цена */}
         <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
           {price.toFixed(2)} zł
         </Typography>
 
-        {/* Кнопка под ценой */}
-        <Box sx={{ mt: 1 }}>
-          <Button
-            fullWidth
-            variant="contained"
-            onClick={handleAdd}
-          >
+        <Box sx={{ mt: 'auto' }}>
+          <Button fullWidth variant="contained" onClick={handleAdd}>
             Do koszyka
           </Button>
         </Box>
       </CardContent>
     </Card>
+
   );
 }
