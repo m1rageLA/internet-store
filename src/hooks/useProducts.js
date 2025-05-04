@@ -9,6 +9,7 @@ import {
     doc,
     getDocs,
 } from "firebase/firestore";
+import { db } from "../firebase";
 
 export function useProducts() {
     const [products, setProducts] = useState([]);

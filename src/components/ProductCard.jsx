@@ -22,20 +22,20 @@ export default function ProductCard({ id, title, description, category, image, p
   };
 
   return (
-    <Card sx={{ maxWidth: 345, m: 1, display: "flex", flexDirection: "column" }}>
+    <Card sx={{ width: 200, m: 1 }}>
       <CardMedia
         component="img"
-        height="180"
-        image={image || 'https://placehold.co/150x200'}
+        image={image || 'https://placehold.co/345x200'}
         alt={title}
+        sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
       />
       <CardContent sx={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
         {/* Чип с категорией, размер и отступы как прежде */}
-        <Chip 
-          label={category} 
-          color="primary" 
-          size="small" 
-          sx={{ mb: 1, alignSelf: 'flex-start' }} 
+        <Chip
+          label={category}
+          color="primary"
+          size="small"
+          sx={{ mb: 1, alignSelf: 'flex-start' }}
         />
 
         <Typography variant="h6" gutterBottom>
