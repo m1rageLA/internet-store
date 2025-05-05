@@ -1,12 +1,27 @@
-# React + Vite
+# 🛒 Internet-store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 How to Set Up
 
-Currently, two official plugins are available:
+```bash
+git clone https://github.com/m1rageLA?tab=repositories internet-store
+cd ./internet-store
+git checkout -b dev  # or create another branch
+npm install
+npm run dev
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live Demo
+You can check out the deployed version of the project here:
+🔗 https://internet-store-d7a86.web.app/
 
-## Expanding the ESLint configuration
+## About the Project
+This project was created by a team of developers to explore and apply Agile and SCRUM methodologies in practice.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🎯 The focus was not on building a polished product, but on establishing effective collaboration between developers, the Scrum Master, and a hypothetical Product Owner.
+
+## Workflow Highlights
+- Weekly stand-up meetings and sprint reviews were conducted to assess progress.
+- Sprint retrospectives were held at the end of each sprint to reflect and improve.
+- The team adopted the strategy:
+  "Learn first, build later."
+- The first sprint was fully dedicated to learning new technologies, setting a foundation for further development.

@@ -1,9 +1,12 @@
 import React from 'react';
 import { Grid, Typography, Container } from '@mui/material';
 import ProductCard from './ProductCard';
-import { products } from '../data/products';
+import { useProducts } from '../hooks/useProducts';
+
 
 export default function ProductsSection() {
+  const { products } = useProducts();
+
   return (
     <Container maxWidth="lg" sx={{ mt: 4 }}>
       <Typography color='#2e2e2e' variant="h4" fontWeight="bold" gutterBottom>
