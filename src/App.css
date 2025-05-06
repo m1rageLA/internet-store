@@ -177,4 +177,22 @@ aside {
 .contact-form button:hover {
   background-color: #21a1f1;
 }
+/* App.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #333;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
 

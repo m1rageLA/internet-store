@@ -12,9 +12,7 @@ function Home() {
   return <h2>Strona Główna</h2>;
 }
 
-function About() {
-  return <h2>O nas</h2>;
-}
+
 
 function Contact() {
   return (
@@ -71,7 +69,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
