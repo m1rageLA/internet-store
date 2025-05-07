@@ -1,5 +1,5 @@
-import React from 'react';
-import { Grid, Typography, Container } from '@mui/material';
+import React, { useState } from 'react';
+import { Grid, Typography, Container, TextField } from '@mui/material';
 import ProductCard from './ProductCard';
 import { products } from '../data/products';
 import { useCategory } from './CategoryContext';
@@ -7,16 +7,28 @@ import { useCategory } from './CategoryContext';
 export default function ProductsSection() {
 
   const { selected } = useCategory();
+  const [search, setSearch] = useState('');
 
-  const filtered = selected.length === 0
+  const categoryFiltered = selected.length === 0
     ? products // Show all if none selected
     : products.filter((p) => selected.includes(p.category));
+
+  // Apply search filter
+  const filtered = categoryFiltered.filter((p) =>
+    p.title.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <Container maxWidth="lg" sx={{ mt: 4 }}>
       <Typography color='#2e2e2e' variant="h4" fontWeight="bold" gutterBottom>
         Produkty
       </Typography>
+      <TextField id="search" 
+        label="Wyszukaj produkt" 
+        type="search" 
+        size="small"
+        fullWidth
+        margin="normal" onChange={(e) => setSearch(e.target.value)} />
       <Grid container spacing={3}>
         {filtered.map((product) => (
           <Grid item xs={12} sm={6} md={4} key={product.id}>
