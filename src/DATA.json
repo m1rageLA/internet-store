@@ -1,0 +1,195 @@
+[
+    {
+      "title": "Beige T-Shirt",
+      "description": "Basic men's beige T-shirt",
+      "category": "shirts",
+      "image": "https://static.staff-clothes.com/uploads/media/image_product/0003/52/8f0e1a76f46a4f758069a5fc223dcdeb.jpeg",
+      "price": 25,
+      "stock": 50
+    },
+    {
+      "title": "Gray Sports Top",
+      "description": "Women's gray sports top",
+      "category": "shirts",
+      "image": "https://static.staff-clothes.com/uploads/media/image_product/0001/76/18799c631d8f4ff9a7376920f00a653f.jpeg",
+      "price": 20,
+      "stock": 40
+    },
+    {
+      "title": "Green Sports Top",
+      "description": "Women's green sports top",
+      "category": "shirts",
+      "image": "https://static.staff-clothes.com/uploads/media/image_product/0001/76/c3d0f02527164ffba72773c1534bc262.jpeg",
+      "price": 20,
+      "stock": 35
+    },
+    {
+      "title": "Green Tracksuit",
+      "description": "Green sports tracksuit",
+      "category": "shirts",
+      "image": "https://static.staff-clothes.com/uploads/media/image_product/0002/26/21e83a2460604fbe816ba12c90bb6693.jpeg",
+      "price": 59,
+      "stock": 30
+    },
+    {
+      "title": "Yellow Logo T-Shirt",
+      "description": "Yellow T-shirt with logo",
+      "category": "shirts",
+      "image": "https://static.staff-clothes.com/uploads/media/image_product/0001/98/1925673d30e54f3aab5499d8e89eb9df.jpeg",
+      "price": 23,
+      "stock": 45
+    },
+    {
+      "title": "White Logo T-Shirt",
+      "description": "White T-shirt with logo",
+      "category": "shirts",
+      "image": "https://static.staff-clothes.com/uploads/media/image_product/0002/92/43d2e93a97934f0499e2f40c20c54582.jpeg",
+      "price": 23,
+      "stock": 40
+    },
+    {
+      "title": "Black Logo T-Shirt (Men)",
+      "description": "Men's black T-shirt with logo",
+      "category": "shirts",
+      "image": "https://static.staff-clothes.com/uploads/media/image_product/0002/99/2f979c8813074f728551d271e061b11e.jpeg",
+      "price": 24,
+      "stock": 50
+    },
+    {
+      "title": "Black Printed T-Shirt (Women)",
+      "description": "Women's black T-shirt with print",
+      "category": "shirts",
+      "image": "https://static.staff-clothes.com/uploads/media/image_product/0001/37/b4fc43220a58459fafe00fd452d5655f15a851ba.jpeg",
+      "price": 24,
+      "stock": 42
+    },
+    {
+      "title": "Brown T-Shirt (Women)",
+      "description": "Women's brown T-shirt",
+      "category": "shirts",
+      "image": "https://static.staff-clothes.com/uploads/media/image_product/0003/54/272ae925db054f6fb72a45da91a027f9.jpeg",
+      "price": 22,
+      "stock": 38
+    },
+    {
+      "title": "Black Sneakers (Men)",
+      "description": "Basic black men's sneakers",
+      "category": "footwear",
+      "image": "https://static.staff-clothes.com/uploads/media/image_product/0001/01/edb2d54a9f9a25246342af00ddb5973460beadd7.jpeg",
+      "price": 69,
+      "stock": 25
+    },
+    {
+      "title": "Beige Sports Sneakers",
+      "description": "Beige sports sneakers",
+      "category": "footwear",
+      "image": "https://static.staff-clothes.com/uploads/media/image_product/0002/35/bb27c31a65364fc792d964c27ec469f4.jpeg",
+      "price": 75,
+      "stock": 30
+    },
+    {
+      "title": "Black Sports Sneakers (Men)",
+      "description": "Men's black sports sneakers",
+      "category": "footwear",
+      "image": "https://static.staff-clothes.com/uploads/media/image_product/0003/95/709b7fdb02544f72ab2f623d37754ffd.jpeg",
+      "price": 75,
+      "stock": 30
+    },
+    {
+      "title": "Black Pants (Men)",
+      "description": "Men's black pants",
+      "category": "pants",
+      "image": "https://staff-clothes.pl/image/catalog/FFK0470/9303d0df7b7d4f9a97144cd048b89a96.jpeg",
+      "price": 45,
+      "stock": 35
+    },
+    {
+      "title": "Black Sports Pants (Women)",
+      "description": "Women's black sports pants",
+      "category": "pants",
+      "image": "https://staff-clothes.pl/image/catalog/SNT0553/6747d466fcca4fada7ef44601df53a97.jpeg",
+      "price": 42,
+      "stock": 28
+    },
+    {
+      "title": "Graphite Sports Pants",
+      "description": "Graphite-colored sports pants",
+      "category": "pants",
+      "image": "https://staff-clothes.pl/image/catalog/FFK0434/2ff3e4469b3c4f399624c4c7a39157f9.jpeg",
+      "price": 44,
+      "stock": 30
+    },
+    {
+      "title": "Gray Puffer Pants (Women)",
+      "description": "Women's gray puffer pants",
+      "category": "pants",
+      "image": "https://staff-clothes.pl/image/catalog/SNT0553/6f52197845614ff181c59e3e6baae10d.jpeg",
+      "price": 49,
+      "stock": 22
+    },
+    {
+      "title": "Gray Synthetic Pants (Women)",
+      "description": "Women's gray synthetic pants",
+      "category": "pants",
+      "image": "https://staff-clothes.pl/image/catalog/SNT0551/761e43644b1d4fe8bc68d3836c0d315d.jpeg",
+      "price": 44,
+      "stock": 27
+    },
+    {
+      "title": "Cargo Pants (Women)",
+      "description": "Women's cargo pants",
+      "category": "pants",
+      "image": "https://staff-clothes.pl/image/catalog/SNT0422/51e0cf8b01da4fb0b1c824ec00bbbeaa.jpeg",
+      "price": 48,
+      "stock": 30
+    },
+    {
+      "title": "Black Casual Pants (Men)",
+      "description": "Men's black casual pants",
+      "category": "pants",
+      "image": "https://staff-clothes.pl/image/catalog/FFK0423/c7590f5ee1464f97b811f0b2f4dcd88e.jpeg",
+      "price": 46,
+      "stock": 33
+    },
+    {
+      "title": "Brown Cargo Pants (Women)",
+      "description": "Women's brown cargo pants",
+      "category": "pants",
+      "image": "https://staff-clothes.pl/image/cache/catalog/SNT0422/4b0b160b855d4fb485872a2bf2162aa9-400x500.jpeg",
+      "price": 48,
+      "stock": 26
+    },
+    {
+      "title": "Black Sneakers",
+      "description": "Classic black sneakers",
+      "category": "footwear",
+      "image": "https://static.staff-clothes.com/uploads/media/image_product/0001/07/76e12995ef09aed9127e4bdce564bf3682a4b891.jpeg",
+      "price": 72,
+      "stock": 20
+    },
+    {
+      "title": "Gray Mesh Sneakers (Men)",
+      "description": "Men's gray mesh sneakers",
+      "category": "footwear",
+      "image": "https://static.staff-clothes.com/uploads/media/image_product/0003/95/709b7fdb02544f72ab2f623d37754ffd.jpeg",
+      "price": 74,
+      "stock": 22
+    },
+    {
+      "title": "Brown Mesh Sneakers",
+      "description": "Brown mesh running sneakers",
+      "category": "footwear",
+      "image": "https://content1.rozetka.com.ua/goods/images/big/454578849.jpg",
+      "price": 69,
+      "stock": 19
+    },
+    {
+      "title": "Gray Sneakers with Beige Sole",
+      "description": "Gray sneakers with beige sole",
+      "category": "footwear",
+      "image": "https://static.staff-clothes.com/media/cache/image_product_mobile_product/image_product/0003/92/84d1068079a84f58b2ed7e3213289154.jpeg",
+      "price": 76,
+      "stock": 25
+    }
+  ]
+  
