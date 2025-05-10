@@ -1,29 +1,36 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Box,
   Typography,
   Slider,
   FormGroup,
   FormControlLabel,
-  Checkbox
+  Checkbox,
 } from '@mui/material';
+import { useCategory } from './CategoryContext';
 
 export default function SidePanel() {
-  const [priceRange, setPriceRange] = useState([0, 100]);
-
-  const updateRange = (e, data) => {
-    setPriceRange(data);
-  };
-
-  const MAX = 200;
-  const MIN = 0;
-
+  const { selected, setSelected, priceRange, setPriceRange } = useCategory();
+  const categories = ['pants', 'footwear', 'shirts', 'Akcesoria', 'Dom', 'Audio'];
+  
+  
+  const MIN = 0, MAX = 200;
   const marks = [
-    { value: MIN, label: '' },
-    { value: MAX, label: '' },
+    { value: MIN, label: `${MIN}` },
+    { value: MAX, label: `${MAX}` },
   ];
 
-  const categories = ['Obuwie', 'Spodnie', 'Koszulki', 'Akcesoria', 'Dom', 'Audio'];
+  const handleRangeChange = (_, newValue) => {
+    setPriceRange(newValue);
+  };
+
+  const handleToggle = (cat) => (e) => {
+    if (e.target.checked) {
+      setSelected([...selected, cat]);
+    } else {
+      setSelected(selected.filter(c => c !== cat));
+    }
+  };
 
   return (
     <Box
@@ -34,40 +41,46 @@ export default function SidePanel() {
         left: 24,
         transform: 'translateY(-50%)',
         width: 240,
-        p: 2,
+        p: 4,
         borderRadius: 2,
         boxShadow: 2,
-        bgcolor: 'background.paper',
-        color: 'text.primary',
+        bgcolor: '#ffffff',   
+        color: '#2e2e2e',      
         zIndex: 1100,
       }}
     >
-      <Typography variant="h6" fontWeight="bold" gutterBottom>
+      {/* Price Slider */}
+      <Typography mb={5} variant="h6" fontWeight="bold" gutterBottom>
+        Zakres cenowy
+      </Typography>
+      <Slider
+        marks={marks}
+        value={priceRange}
+        onChange={handleRangeChange}
+        valueLabelDisplay="on"
+        min={MIN}
+        max={MAX}
+      />
+
+      {/* Categories */}
+      <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ mt: 3 }}>
         Kategorie
       </Typography>
       <FormGroup>
-        {categories.map(category => (
+        {categories.map(cat => (
           <FormControlLabel
-            key={category}
-            control={<Checkbox />}
-            label={category}
+            key={cat}
+            control={
+              <Checkbox
+                checked={selected.includes(cat)}
+                onChange={handleToggle(cat)}
+              />
+            }
+            label={cat}
+            sx={{ color: '#2e2e2e' }}
           />
         ))}
       </FormGroup>
-
-      <Box mt={4}>
-        <Typography variant="subtitle1" gutterBottom>
-          Zakres cenowy
-        </Typography>
-        <Slider
-          marks={marks}
-          value={priceRange}
-          onChange={updateRange}
-          valueLabelDisplay="on"
-          min={MIN}
-          max={MAX}
-        />
-      </Box>
     </Box>
   );
 }

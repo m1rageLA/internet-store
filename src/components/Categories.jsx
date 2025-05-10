@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, Chip, Stack } from '@mui/material';
 import { useCategory } from './CategoryContext';
 
-const categories = ['Obuwie', 'Spodnie', 'Koszulki', 'Akcesoria', 'Dom', 'Audio'];
+const categories = ['pants', 'footwear', 'shirts', 'Akcesoria', 'Dom', 'Audio'];
 
 export const Categories = () => { 
   const { selected, toggleCategory } = useCategory();
