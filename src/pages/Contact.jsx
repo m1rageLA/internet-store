@@ -1,3 +1,24 @@
+// pages/Contact.jsx
 import React from 'react';
-const Contact = () => <h2>Kontakt</h2>;
-export default Contact;
+import '../styles/contact.css'; // Import CSS for styling
+
+export default function Contact() {
+  return (
+    <div className="contact-page">
+      <h2>Kontakt</h2>
+      <p>Masz pytania? Skontaktuj się z nami!</p>
+
+      <ul>
+        <li>Email: kontakt@firma.pl</li>
+        <li>Telefon: +48 123 456 789</li>
+      </ul>
+
+      <form className="contact-form">
+        <input type="text" placeholder="Imię" required />
+        <input type="email" placeholder="E-mail" required />
+        <textarea placeholder="Twoja wiadomość..." required />
+        <button type="submit">Wyślij</button>
+      </form>
+    </div>
+  );
+}

@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Grid, Typography, Container, TextField } from '@mui/material';
 import ProductCard from './ProductCard';
 import { products } from '../data/products';
-import { useCategory } from './CategoryContext';
+import { useProducts } from '../hooks/useProducts';
 
 export default function ProductsSection() {
-
+  const { products } = useProducts();
   const { selected } = useCategory();
   const [search, setSearch] = useState('');
 
