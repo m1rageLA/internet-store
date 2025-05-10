@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 import Checkout from './components/Checkout';
 import './App.css';
+import About from './pages/About.jsx';
 
 export default function App() {
   return (
