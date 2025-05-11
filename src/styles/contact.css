@@ -113,6 +113,9 @@ aside {
     color: #333;
 }
 
+.contact-page ul {
+text-align: center;
+}
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -132,10 +135,11 @@ aside {
 }
 
 .contact-form button {
+    width: 100%;
     padding: 1rem;
     font-size: 1rem;
     margin: 0 auto;
-    background-color: #61dafb;
+    background-color: #28282b;
     border: none;
     border-radius: 8px;
     cursor: pointer;

@@ -8,10 +8,10 @@ export default function Contact() {
       <h2>Kontakt</h2>
       <p>Masz pytania? Skontaktuj się z nami!</p>
 
-      <ul>
+
         <li>Email: kontakt@firma.pl</li>
         <li>Telefon: +48 123 456 789</li>
-      </ul>
+
 
       <form className="contact-form">
         <input type="text" placeholder="Imię" required />
