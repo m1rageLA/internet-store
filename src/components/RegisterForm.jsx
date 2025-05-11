@@ -1,32 +1,56 @@
-import React, { useState } from 'react';
-import { Box, TextField, Button } from '@mui/material';
+import React, { useState } from "react";
+import { Box, TextField, Button, Alert } from "@mui/material";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth } from "../firebase";
+import { useNavigate } from "react-router-dom";
 
-function RegisterForm() {
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+export default function RegisterForm() {
+  const [fullName, setFullName]           = useState("");
+  const [email, setEmail]                 = useState("");
+  const [password, setPassword]           = useState("");
+  const [confirmPassword, setConfirmPass] = useState("");
+  const [error, setError]                 = useState("");
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (password !== confirmPassword) {
-      alert("Passwords dont match");
+      setError("Hasła nie są takie same");
       return;
     }
-    // Logic for registration !!!!
-    console.log('Registering with:', fullName, email, password);
+
+    try {
+      const cred = await createUserWithEmailAndPassword(auth, email, password);
+
+      // 👉 устанавливаем displayName
+      await updateProfile(cred.user, { displayName: fullName });
+      await auth.currentUser.getIdToken(true);
+
+      // 🔁 обновляем текущего пользователя, чтобы в Header появилось имя
+      await auth.currentUser.reload();
+
+      alert("Rejestracja przebiegła pomyślnie!");
+      navigate("/");
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ width: '100%', maxWidth: 400 }}>
+    <Box component="form" onSubmit={handleSubmit} sx={{ width: "100%", maxWidth: 400, mx: "auto", mt: 4 }}>
+      {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
+
       <TextField
-        label="Full Name"
+        label="Pełne imię"
         fullWidth
         margin="normal"
         required
         value={fullName}
         onChange={(e) => setFullName(e.target.value)}
       />
+
       <TextField
         label="Email"
         type="email"
@@ -36,8 +60,9 @@ function RegisterForm() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
+
       <TextField
-        label="Password"
+        label="Hasło"
         type="password"
         fullWidth
         margin="normal"
@@ -45,20 +70,20 @@ function RegisterForm() {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
+
       <TextField
-        label="Confirm Password"
+        label="Potwierdź hasło"
         type="password"
         fullWidth
         margin="normal"
         required
         value={confirmPassword}
-        onChange={(e) => setConfirmPassword(e.target.value)}
+        onChange={(e) => setConfirmPass(e.target.value)}
       />
-      <Button type="submit" variant="contained" color="primary" fullWidth sx={{ mt: 2 }}>
-        Register
+
+      <Button type="submit" variant="contained" fullWidth sx={{ mt: 2 }}>
+        Zarejestruj się
       </Button>
     </Box>
   );
 }
-
-export default RegisterForm;

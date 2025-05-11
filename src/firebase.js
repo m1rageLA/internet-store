@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 import products from "./DATA.json"; // 👈 импортируем JSON
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDHrSa1uxOtgmmlLpQkgkpkTzMmfU3x6Bs",
@@ -37,3 +38,4 @@ async function uploadProductsOnce() {
 
 // Вызовем при старте
 uploadProductsOnce();
+export const auth = getAuth(app);
