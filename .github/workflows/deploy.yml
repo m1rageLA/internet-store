@@ -1,31 +1,39 @@
 name: CI/CD Firebase Deployment
 
+# Trigger on merges/pushes to `main`
 on:
   push:
     branches:
       - main
 
 jobs:
-  build_and_deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
 
-      - name: Install Node.js
+      # 1. Check out your repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Install Node.js (v20.x to satisfy Firebase CLI v14+)
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: '20.x'
 
+      # 3. Install dependencies
       - name: Install dependencies
         run: npm ci
 
+      # 4. Run your unit tests (fail here if tests break)
       - name: Run tests
-        run: npm run test # or vitest run
+        run: npm run test   # or replace with: npx vitest run
 
-      - name: Build the app
+      # 5. Build the production bundle
+      - name: Build app
         run: npm run build
 
+      # 6. Deploy to Firebase Hosting (“live” channel)
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
