@@ -54,7 +54,7 @@ export default function ProductsSection() {
         margin="normal"
         value={search}                // ← добавили
         onChange={e => setSearch(e.target.value)}
-        sx={{ width: '25%', ml: '10px' }}                // ← добавили
+        sx={{ width: '30%', ml: '10px' }}                // ← добавили
       />
       <Grid container spacing={3}>
         {filtered.map((product) => (
