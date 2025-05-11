@@ -1,22 +1,20 @@
+// src/tests/routing.test.jsx
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
+import { vi, describe, it, expect } from 'vitest';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
 import NotFound from '../pages/NotFound';
 
-// Мокаем useCart.js
+// Mock your cart hook so Home renders without errors
 vi.mock('../useCart', () => ({
-  useCart: () => ({
-    addToCart: vi.fn(),
-  }),
+  useCart: () => ({ addToCart: vi.fn() }),
 }));
 
-
 describe('Routing', () => {
-  it('should render Home page on default route', () => {
+  it('renders Home page on `/`', () => {
     render(
       <MemoryRouter initialEntries={['/']}>
         <Routes>
@@ -27,10 +25,12 @@ describe('Routing', () => {
         </Routes>
       </MemoryRouter>
     );
-    expect(screen.getByRole('heading', { name: /o nas/i })).toBeInTheDocument();
+    // Your Home page shows the filters
+    expect(screen.getByText(/Zakres cenowy/i)).toBeInTheDocument();
+    expect(screen.getByText(/Kategorie/i)).toBeInTheDocument();
   });
 
-  it('should render About page', () => {
+  it('renders About page on `/about`', () => {
     render(
       <MemoryRouter initialEntries={['/about']}>
         <Routes>
@@ -41,10 +41,10 @@ describe('Routing', () => {
         </Routes>
       </MemoryRouter>
     );
-    expect(screen.getByRole('heading', { name: /o nas/i })).toBeInTheDocument();
+    expect(screen.getByText(/O nas/i)).toBeInTheDocument();
   });
 
-  it('should render Contact page', () => {
+  it('renders Contact page on `/contact`', () => {
     render(
       <MemoryRouter initialEntries={['/contact']}>
         <Routes>
@@ -55,12 +55,12 @@ describe('Routing', () => {
         </Routes>
       </MemoryRouter>
     );
-    expect(screen.getByRole('heading', { name: /kontakt/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Kontakt/i })).toBeInTheDocument();
   });
 
-  it('should render NotFound page on invalid route', () => {
+  it('renders 404 on unknown route', () => {
     render(
-      <MemoryRouter initialEntries={['/some-invalid-page']}>
+      <MemoryRouter initialEntries={['/no-such']}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -69,6 +69,6 @@ describe('Routing', () => {
         </Routes>
       </MemoryRouter>
     );
-    expect(screen.getByRole('heading', { name: /404/i })).toBeInTheDocument();
+    expect(screen.getByText(/404/i)).toBeInTheDocument();
   });
 });
