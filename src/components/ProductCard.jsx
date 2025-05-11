@@ -10,7 +10,8 @@ import {
   Modal,
   CardActionArea,
 } from '@mui/material';
-import { useCart } from '../context/CartContext';
+import useCart from '../useCart';
+
 
 /**
  * Карточка товара с модальным окном подробностей
