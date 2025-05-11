@@ -1,18 +1,30 @@
-import React, { useState } from 'react';
-import { Box, TextField, Button } from '@mui/material';
+import React, { useState } from "react";
+import { Box, TextField, Button, Alert } from "@mui/material";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
+import { useNavigate } from "react-router-dom";
 
-function LoginForm() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+export default function LoginForm() {
+  const [email, setEmail]     = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError]     = useState("");
 
-  const handleLogin = (e) => {
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Додайте логіку логування, наприклад, виклик API
-    console.log('Logging in with:', email, password);
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      alert("Logowanie przebiegło pomyślnie!");  // польский alert
+      navigate("/");                            // переходим на главную
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   return (
-    <Box component="form" onSubmit={handleLogin} sx={{ width: '100%', maxWidth: 400 }}>
+    <Box component="form" onSubmit={handleLogin} sx={{ width: "100%", maxWidth: 400 }}>
+      {error && <Alert severity="error">{error}</Alert>}
       <TextField
         label="Email"
         type="email"
@@ -23,7 +35,7 @@ function LoginForm() {
         onChange={(e) => setEmail(e.target.value)}
       />
       <TextField
-        label="Password"
+        label="Hasło"
         type="password"
         fullWidth
         margin="normal"
@@ -31,12 +43,9 @@ function LoginForm() {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <Button type="submit" variant="contained" color="primary" fullWidth sx={{ mt: 2 }}>
-        Log In
+      <Button type="submit" variant="contained" fullWidth sx={{ mt: 2 }}>
+        Zaloguj się
       </Button>
     </Box>
   );
 }
-
-export default LoginForm;
-// This code defines a simple login form using React and Material-UI.
