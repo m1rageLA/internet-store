@@ -24,4 +24,4 @@ This project was created by a team of developers to explore and apply Agile and 
 - Sprint retrospectives were held at the end of each sprint to reflect and improve.
 - The team adopted the strategy:
   "Learn first, build later."
-- The first sprint was fully dedicated to learning new technologies, setting a foundation for further development.
+- The first sprint was fully dedicated to learning new technologies, setting a foundation for further developments.
