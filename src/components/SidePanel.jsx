@@ -6,12 +6,17 @@ import {
   FormGroup,
   FormControlLabel,
   Checkbox,
+  useMediaQuery,
+  useTheme,
 } from '@mui/material';
 import { useCategory } from './CategoryContext';
 
 export default function SidePanel() {
   const { selected, setSelected, priceRange, setPriceRange } = useCategory();
   const categories = ['pants', 'footwear', 'shirts', 'Akcesoria', 'Dom', 'Audio'];
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   
   
   const MIN = 0, MAX = 200;
@@ -36,17 +41,18 @@ export default function SidePanel() {
     <Box
       component="aside"
       sx={{
-        position: 'fixed',
-        top: '50%',
-        left: 24,
-        transform: 'translateY(-50%)',
-        width: 240,
+        position: { md: 'fixed', xs: 'static' },
+        top: { md: '50%', xs: 'auto' },
+        left: { md: 24, xs: 'auto' },
+        transform: { md: 'translateY(-50%)', xs: 'none' },
+        width: { xs: '100%', md: 240, xl: 300 },
         p: 4,
         borderRadius: 2,
         boxShadow: 2,
-        bgcolor: '#ffffff',   
-        color: '#2e2e2e',      
-        zIndex: 1100,
+        bgcolor: '#ffffff',
+        color: '#2e2e2e',
+        zIndex: isMobile ? 'auto' : 1100,
+        mb: { xs: 2, md: 0 },
       }}
     >
       {/* Price Slider */}

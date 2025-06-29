@@ -60,10 +60,10 @@ export default function ProductCard({
     <>
       <Card
         sx={{
-          width: 240,
+          width: { xs: '100%', sm: 240 },
           display: 'flex',
           flexDirection: 'column',
-          m: 1,
+          m: { xs: 0, sm: 1 },
           color: 'text.primary',
         }}
       >
