@@ -42,7 +42,7 @@ export default function ProductsSection() {
   }
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 4 }}>
+    <Container maxWidth="xl" sx={{ mt: 4 }}>
       <Typography color='#2e2e2e' variant="h4" fontWeight="bold" gutterBottom sx={{ ml: "10px" }}>
         Produkty
       </Typography>
@@ -52,13 +52,13 @@ export default function ProductsSection() {
         size="small"
         fullWidth
         margin="normal"
-        value={search}                // ← добавили
+        value={search}
         onChange={e => setSearch(e.target.value)}
-        sx={{ width: '30%', ml: '10px' }}                // ← добавили
+        sx={{ width: { xs: '100%', sm: '30%' }, ml: { xs: 0, sm: '10px' } }}
       />
-      <Grid container spacing={3}>
+      <Grid container spacing={{ xs: 2, md: 3 }}>
         {filtered.map((product) => (
-          <Grid item xs={12} sm={6} md={4} key={product.id}>
+          <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={product.id}>
             <ProductCard {...product} />
           </Grid>
         ))}

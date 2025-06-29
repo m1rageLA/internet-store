@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4, px: 4, pt: 4 }}>
       <CategoryProvider>
-        <Box sx={{ display: 'flex', gap: 4 }}>
-          <Box sx={{ width: 250, flexShrink: 0 }}>
+        <Box sx={{ display: 'flex', gap: 4, flexDirection: { xs: 'column', md: 'row' } }}>
+          <Box sx={{ width: { xs: '100%', md: 250 }, flexShrink: 0 }}>
             <SidePanel />
           </Box>
           <Box sx={{ flexGrow: 1 }}>
